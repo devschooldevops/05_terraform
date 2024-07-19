@@ -13,7 +13,14 @@ At the end of the lesson the student should have:
 
 
 ## Resources required/used
-- Terraform
+Example:
+- Azure virtual machines;
+- Repos;
+- Local machine; etc
+
+## Prerequisites
+- what do the students need to have installed before the lesson?
+- what do the students need to know before the lesson?
 
 ## Agenda
 The agenda must contain:
