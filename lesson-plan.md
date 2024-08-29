@@ -4,30 +4,35 @@
 
 **Duration**: 3 hours (1h theory, 2h practic)
 
-**Primary teacher**: 
+**Primary teacher**: Bogdan Ionut Ivan
 
 **Secondary teacher** (if needed): 
 
 ## Goal
 At the end of the lesson the student should have:
 
+- basic understanding of how Terraform works
+- be able to deploy a simple TF project in Azure Public Cloud consisting of a simple cluster of 3 vm-s serving a webpage
 
-## Resources required/used
-Example:
-- Azure virtual machines;
-- Repos;
-- Local machine; etc
+
+## Resources required/used:
+
+- Own computer with Mac/Linux/Windows
+- Access to Azure Public Cloud in a test subscription (contributor role the very least)
+- Access to this repository
 
 ## Prerequisites
-- what do the students need to have installed before the lesson?
-- what do the students need to know before the lesson?
+
+- hashicorp terraform installed (for Windows: https://releases.hashicorp.com/terraform/1.9.5/terraform_1.9.5_windows_amd64.zip)
+- access to local cli console
+- terraform binary available in the PATH (for Windows check here how to: https://stackoverflow.com/questions/1618280/where-can-i-set-path-to-make-exe-on-windows)
+- basic understanding of cloud concepts
 
 ## Agenda
-The agenda must contain:
-- presentation of the technology in the industry (pros and cons)
-- introduction to the technology
-- lesson core (ideally as much practical exercises as possible) **up to the trainer**
-- re-cap of the most important conceps
+
+- presentation Terraform
+- lab session
+- re-cap
 - Menti/Kahoot evaluation
 - homework
 
