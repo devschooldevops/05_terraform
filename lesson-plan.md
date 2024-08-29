@@ -6,7 +6,7 @@
 
 **Primary teacher**: Bogdan Ionut Ivan
 
-**Secondary teacher** (if needed): 
+**Secondary teacher** (if needed):
 
 ## Goal
 At the end of the lesson the student should have:
@@ -26,11 +26,12 @@ At the end of the lesson the student should have:
 - hashicorp terraform installed (for Windows: https://releases.hashicorp.com/terraform/1.9.5/terraform_1.9.5_windows_amd64.zip)
 - access to local cli console
 - terraform binary available in the PATH (for Windows check here how to: https://stackoverflow.com/questions/1618280/where-can-i-set-path-to-make-exe-on-windows)
+- optional (but very nice to have): any code editor with version control features like Visual Studio Code + git for windows
 - basic understanding of cloud concepts
 
 ## Agenda
 
-- presentation Terraform
+- presentation of Terraform
 - lab session
 - re-cap
 - Menti/Kahoot evaluation
