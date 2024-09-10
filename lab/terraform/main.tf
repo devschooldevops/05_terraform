@@ -121,6 +121,7 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
     sku       = "22_04-lts-gen2"
     version   = "latest"
   }
+  custom_data = filebase64("nginx.sh")
 
   computer_name  = var.hostname
   admin_username = var.username
