@@ -19,5 +19,5 @@ variable "username" {
 variable "hostname" {
   type        = string
   description = "The hostname of the VM."
-  default     = "devops_vm"
+  default     = "devopsvm"
 }
