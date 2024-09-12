@@ -137,6 +137,7 @@ resource "azurerm_lb_rule" "my_lb_rule" {
   backend_address_pool_ids       = [azurerm_lb_backend_address_pool.my_lb_pool.id]
 }
 
+
 resource "azurerm_lb_outbound_rule" "my_lboutbound_rule" {
   resource_group_name     = azurerm_resource_group.rg.name
   name                    = "test-outbound"
