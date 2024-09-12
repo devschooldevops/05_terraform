@@ -16,6 +16,11 @@ variable "username" {
   default     = "azureadmin"
 }
 
+variable "password" {
+  type        = string
+  description = "The password for local account that will be created on the new VM."
+  default     = ""
+}
 variable "hostname" {
   type        = string
   description = "The hostname of the VM."

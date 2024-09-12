@@ -7,8 +7,10 @@ sudo apt-get update -y
 # Install NGINX
 sudo apt-get install nginx -y
 
-# change the default index page
-echo ${azurerm_resource_group.rg.name} > /var/www/html/index.nginx-debian.html
+#echo "Merge nginxu'!" > /var/www/html/index.nginx-debian.html
+echo "Resource group is: ${rg}" > /var/www/html/index.nginx-debian.html
+echo "My name is: `hostname`" >> /var/www/html/index.nginx-debian.html
+
 
 # Enable and start the NGINX service
 sudo systemctl enable nginx

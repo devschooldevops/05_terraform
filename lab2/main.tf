@@ -189,15 +189,18 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
     sku       = "22_04-lts-gen2"
     version   = "latest"
   }
-  custom_data = filebase64("nginx.sh")
+  # custom_data = filebase64("nginx.sh")
+  custom_data = base64encode(data.template_file.nginx.rendered)
 
   computer_name  = "${var.hostname}${count.index}"
+  disable_password_authentication = false
   admin_username = var.username
+  admin_password = var.password
 
-  admin_ssh_key {
-    username   = var.username
-    public_key = azapi_resource_action.ssh_public_key_gen.output.publicKey
-  }
+  # admin_ssh_key {
+  #   username   = var.username
+  #   public_key = azapi_resource_action.ssh_public_key_gen.output.publicKey
+  # }
 
   boot_diagnostics {
     storage_account_uri = azurerm_storage_account.my_storage_account.primary_blob_endpoint
