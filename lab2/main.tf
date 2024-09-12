@@ -84,21 +84,6 @@ resource "azurerm_subnet_network_security_group_association" "my_terraform_nsg_a
   network_security_group_id = azurerm_network_security_group.my_terraform_nsg.id
 }
 
-# Connect the security group to the network interfaces
-# resource "azurerm_network_interface_security_group_association" "my_terraform_nsg_nic_link" {
-#   count                     = 3
-#   network_interface_id      = [azurerm_network_interface.my_terraform_nic[count.index].id]
-#   network_security_group_id = azurerm_network_security_group.my_terraform_nsg.id
-# }
-
-# Associate Network Interfaces to the Backend Pool of the Load Balancer
-resource "azurerm_network_interface_backend_address_pool_association" "my_nic_lb_pool" {
-  count                   = 3
-  network_interface_id    = azurerm_network_interface.my_terraform_nic[count.index].id
-  ip_configuration_name   = "my_nic_configuration_${count.index}"
-  backend_address_pool_id = azurerm_lb_backend_address_pool.my_lb_pool.id
-}
-
 # Create Public Load Balancer
 resource "azurerm_lb" "my_lb" {
   name                = "myLB"
@@ -117,6 +102,13 @@ resource "azurerm_lb_backend_address_pool" "my_lb_pool" {
   name                 = "test-pool"
 }
 
+# Associate Network Interfaces to the Backend Pool of the Load Balancer
+resource "azurerm_network_interface_backend_address_pool_association" "my_nic_lb_pool" {
+  count                   = 3
+  network_interface_id    = azurerm_network_interface.my_terraform_nic[count.index].id
+  ip_configuration_name   = "my_nic_configuration_${count.index}"
+  backend_address_pool_id = azurerm_lb_backend_address_pool.my_lb_pool.id
+}
 resource "azurerm_lb_probe" "my_lb_probe" {
   resource_group_name = azurerm_resource_group.rg.name
   loadbalancer_id     = azurerm_lb.my_lb.id
@@ -197,11 +189,6 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
   disable_password_authentication = false
   admin_username = var.username
   admin_password = var.password
-
-  # admin_ssh_key {
-  #   username   = var.username
-  #   public_key = azapi_resource_action.ssh_public_key_gen.output.publicKey
-  # }
 
   boot_diagnostics {
     storage_account_uri = azurerm_storage_account.my_storage_account.primary_blob_endpoint
