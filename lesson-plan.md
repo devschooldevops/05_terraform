@@ -33,13 +33,8 @@ At the end of the lesson the student should have:
 ## Agenda
 
 - presentation of Terraform (section presentation in current repo)
-- lab session (section lab in current repo)
+- lab session (section lab1/lab2 in current repo)
 - re-cap
-- Menti/Kahoot evaluation
+- Menti evaluation
 - homework
 
-## Feedback from students
-(generic survey will be setup)
-
-## Feedback from teachers:
-(generic survey will be setup)
